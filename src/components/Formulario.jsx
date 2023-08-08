@@ -2,22 +2,37 @@ import React, { useState } from 'react'
 
 const Formulario = () => {
 
-  
+    const [nombre,setNombre]=useState('')
+    const [modelo, setModelo] = useState ('')
+    const [precio, setPrecio] = useState (0)
+    const [fecha, setFecha] = useState (0)
 
+ 
+  
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        if([nombre,modelo,precio,fecha].includes("")){
+            console.log("esto está mal")
+        }else{
+            console.log("Todo ok");
+        }
+    }
     
   return (
     <>
         <h2>Ingreso de Productos</h2>
     
         <form
-            
+            onSubmit={handleSubmit}
         >
             <div>
                 <label>Nombre:{" "}</label>
                 <input
                     type='text'
                     placeholder='Ingresar el Nombre'
-                    
+                    value={nombre}
+                    onChange={e=>setNombre(e.target.value)}
                 />
             </div>
             <div>

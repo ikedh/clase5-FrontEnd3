@@ -8,48 +8,62 @@ import Formulario from './components/Formulario'
 
 function App() {
 
-  const [clicks,setClicks] = useState(0)
-  
-  //Boolean
-  const[evento,setEvento]=useState(false)
+  const [clicks, setClicks] = useState(0)
 
-  const cambiador = ()=>{
+
+
+  //Boolean
+  const [evento, setEvento] = useState(false)
+
+  const cambiador = () => {
     setEvento(!evento)
   }
-  
+
 
 
   return (
     <>
-     
-      <Header/>
 
-      <Formulario/>
+      <Header />
+
+      <Formulario />
 
 
-    <br></br>
-   
+      <br></br>
+
 
       <Productos
-            nombre="Auto"
-            precio="4000000"
+        nombre="Auto"
+        precio="4000000"
       />
       <Productos
-            nombre="Motocicleta"
-            precio="2000000"
+        nombre="Motocicleta"
+        precio="2000000"
       />
       <Productos
-            nombre="Bote"
-            precio="300000"
+        nombre="Bote"
+        precio="300000"
       />
 
-      
-      
+      <button
+        className='button'
+        onClick={
+          () => { setClicks(clicks + 1) }
+        }
+      >
+        Clicks = {clicks}
+      </button>
+
+        <button
+          onClick={cambiador}
+        >
+          {evento ? "Desactivado" : "Activado"}
+        </button>
     </>
 
 
-     
-    
+
+
   )
 }
 

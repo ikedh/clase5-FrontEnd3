@@ -45,6 +45,7 @@
 
 .button{
   background-color: rgb(175, 96, 96);
+  border: 1px solid black;
 }
 
 .contenedor-producto{
